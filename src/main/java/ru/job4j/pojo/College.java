@@ -10,5 +10,6 @@ public class College {
         stdu.setDate(new Date());
 
         System.out.println(stdu.getFio() + " in group - " + stdu.getGroup());
+        System.out.println(stdu.getDate());
     }
 }
