@@ -11,17 +11,17 @@ public class Library {
         books[1] = ice;
         books[2] = hel;
         books[3] = cleanC;
-        for (int index = 0; index < books.length; index++) {
-            System.out.println(books[index].getName() + " - " + books[index].getCount());
+        for (Book value : books) {
+            System.out.println(value.getName() + " - " + value.getCount());
         }
         Book temp = books[0];
         books[0] = books[3];
         books[3] = temp;
-        for (int index = 0; index < books.length; index++) {
-            System.out.println(books[index].getName() + " - " + books[index].getCount());
+        for (Book value : books) {
+            System.out.println(value.getName() + " - " + value.getCount());
         }
         for (Book book : books) {
-            if (book.getName().equals("Clean code")) {
+            if ("Clean code".equals(book.getName())) {
                 System.out.println(book.getName() + " - " + book.getCount());
             }
         }
