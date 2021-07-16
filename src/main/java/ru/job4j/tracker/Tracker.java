@@ -35,13 +35,19 @@ public class Tracker {
     }
 
     private int indexOf(int id) {
-        for (int index = 0; index < size; index++) if (items[index].getId() == id) return index;
+        for (int index = 0; index < size; index++) {
+            if (items[index].getId() == id) {
+                return index;
+            }
+        }
         return -1;
     }
 
     public boolean replace(int id, Item item) {
         int index = indexOf(id);
-        if (index == -1) { return false; }
+        if (index == -1) {
+            return false;
+        }
         item.setId(id);
         items[index] = item;
         return true;
@@ -49,7 +55,9 @@ public class Tracker {
 
     public boolean delete(int id) {
         int index = indexOf(id);
-        if (index == -1) { return false; }
+        if (index == -1) {
+            return false;
+        }
         System.arraycopy(items, index + 1, items, index, size - index - 1);
         items[size - 1] = null;
         size--;
