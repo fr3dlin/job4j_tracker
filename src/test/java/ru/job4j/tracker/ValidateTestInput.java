@@ -46,13 +46,14 @@ public class ValidateTestInput {
         Input in = new StubInput(
                 new String[] {"1", "3", "4", "5"}
         );
-        int[] rsl = new int[4];
-        int[] value = {1, 3, 4, 5};
         ValidateInput input = new ValidateInput(out, in);
-        rsl[0] = input.askInt("Enter menu:");
-        rsl[1] = input.askInt("Enter menu:");
-        rsl[2] = input.askInt("Enter menu:");
-        rsl[3] = input.askInt("Enter menu:");
-        assertThat(rsl, is(value));
+        int rsl = input.askInt("Enter menu:");
+        assertThat(rsl, is(1));
+        rsl = input.askInt("Enter menu:");
+        assertThat(rsl, is(3));
+        rsl = input.askInt("Enter menu:");
+        assertThat(rsl, is(4));
+        rsl = input.askInt("Enter menu:");
+        assertThat(rsl, is(5));
     }
 }
