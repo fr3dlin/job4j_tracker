@@ -21,7 +21,7 @@ public class StartUITest {
                 new ExitAction(out)
         );
         new StartUI(out).init(in, tracker, actions);
-        assertThat(tracker.findAll()[0].getName(), is("Item name"));
+        assertThat(tracker.findAll().get(0).getName(), is("Item name"));
     }
 
     @Test
@@ -71,14 +71,14 @@ public class StartUITest {
         );
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0. Find item by id" + System.lineSeparator() +
-                        "1. Exit program" + System.lineSeparator() +
-                        "=== Find item by id ====" + System.lineSeparator() +
-                        item + System.lineSeparator() +
-                        "Menu." + System.lineSeparator() +
-                        "0. Find item by id" + System.lineSeparator() +
-                        "1. Exit program" + System.lineSeparator()
+                "Menu." + System.lineSeparator()
+                        + "0. Find item by id" + System.lineSeparator()
+                        + "1. Exit program" + System.lineSeparator()
+                        + "=== Find item by id ====" + System.lineSeparator()
+                        + item + System.lineSeparator()
+                        + "Menu." + System.lineSeparator()
+                        + "0. Find item by id" + System.lineSeparator()
+                        + "1. Exit program" + System.lineSeparator()
         ));
     }
 
@@ -97,15 +97,15 @@ public class StartUITest {
         );
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0. Find items by name" + System.lineSeparator() +
-                        "1. Exit program" + System.lineSeparator() +
-                        "=== Find items by name ====" + System.lineSeparator() +
-                        item + System.lineSeparator() +
-                        item1 + System.lineSeparator() +
-                        "Menu." + System.lineSeparator() +
-                        "0. Find items by name" + System.lineSeparator() +
-                        "1. Exit program" + System.lineSeparator()
+                "Menu." + System.lineSeparator()
+                        + "0. Find items by name" + System.lineSeparator()
+                        + "1. Exit program" + System.lineSeparator()
+                        + "=== Find items by name ====" + System.lineSeparator()
+                        + item + System.lineSeparator()
+                        + item1 + System.lineSeparator()
+                        + "Menu." + System.lineSeparator()
+                        + "0. Find items by name" + System.lineSeparator()
+                        + "1. Exit program" + System.lineSeparator()
         ));
     }
 
@@ -124,15 +124,15 @@ public class StartUITest {
         );
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0. Show all Items" + System.lineSeparator() +
-                        "1. Exit program" + System.lineSeparator() +
-                        "=== Show all items ====" + System.lineSeparator() +
-                        item + System.lineSeparator() +
-                        item1 + System.lineSeparator() +
-                        "Menu." + System.lineSeparator() +
-                        "0. Show all Items" + System.lineSeparator() +
-                        "1. Exit program" + System.lineSeparator()
+                "Menu." + System.lineSeparator()
+                        + "0. Show all Items" + System.lineSeparator()
+                        + "1. Exit program" + System.lineSeparator()
+                        + "=== Show all items ====" + System.lineSeparator()
+                        + item + System.lineSeparator()
+                        + item1 + System.lineSeparator()
+                        + "Menu." + System.lineSeparator()
+                        + "0. Show all Items" + System.lineSeparator()
+                        + "1. Exit program" + System.lineSeparator()
         ));
     }
 
@@ -148,8 +148,8 @@ public class StartUITest {
         );
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu." + System.lineSeparator() +
-                        "0. Exit program" + System.lineSeparator()
+                "Menu." + System.lineSeparator()
+                        + "0. Exit program" + System.lineSeparator()
         ));
     }
 
