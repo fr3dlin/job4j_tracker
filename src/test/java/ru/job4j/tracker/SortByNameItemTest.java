@@ -33,7 +33,7 @@ public class SortByNameItemTest {
         tracker.add(new Item("F1"));
         tracker.add(new Item("D1"));
         List<Item> items = tracker.findAll();
-        Collections.sort(items, new SortByNameItem().reversed());
+        Collections.sort(items, new DescByNameItem());
         List<Item> result = Arrays.asList(
                 new Item("F1"),
                 new Item("D1"),
