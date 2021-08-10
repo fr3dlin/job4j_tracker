@@ -18,3 +18,9 @@ notifications:
       - fr3dlin@gmail.com
     on_success: never # default: change
     on_failure: always # default: always
+
+env:
+
+  global:
+
+    - CODECOV_TOKEN='6879a4a4-8ae8-4701-924a-ac19e603d0e8'
