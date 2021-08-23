@@ -12,7 +12,7 @@ public class LambdaUsage {
         };
         Comparator<String> compSize = (left, right) -> {
             System.out.println("compare - " + right.length() + " : " + left.length());
-            return right.length() - left.length();
+            return Integer.compare(right.length(), left.length());
         };
         comparator.compare(first, second);
         compSize.compare(first, second);
