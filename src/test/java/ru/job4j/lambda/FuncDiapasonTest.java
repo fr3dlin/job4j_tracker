@@ -1,23 +1,14 @@
-import org.junit.Before;
+package ru.job4j.lambda;
+
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Function;
-
 import static org.hamcrest.Matchers.is;
+
 import static org.junit.Assert.*;
 
-public class FuncDiapason {
-
-    private List<Double> diapason(double a, double b, Function<Double, Double> func) {
-        List<Double> doubles = new ArrayList<>();
-        for (double i = a; i < b; i++) {
-            doubles.add(func.apply(i));
-        }
-        return doubles;
-    }
+public class FuncDiapasonTest {
 
     @Test
     public void whenLinearFunctionThenLinearResults() {
