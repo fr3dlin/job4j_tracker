@@ -12,13 +12,41 @@ public class ProfilesTest {
 
     @Test
     public void whenProfiles() {
-        Address address = new Address("Moscow", "Lubyanka", 4, 321);
-        Profile profile = new Profile(address);
+        List<Address> addresses = List.of(
+                new Address("Moscow", "Lubyanka", 4, 321),
+                new Address("Moscow", "Soltikova", 5, 13),
+                new Address("Moscow", "Marksa", 15, 9)
+        );
         List<Profile> profileList = new ArrayList<>();
-        profileList.add(profile);
+        for (Address address : addresses) {
+            profileList.add(new Profile(address));
+        }
         Profiles prof = new Profiles();
         List<Address> result = prof.collect(profileList);
-        List<Address> expected = List.of(address);
+        assertThat(result, is(addresses));
+    }
+
+    @Test
+    public void whenProfilesDistinct() {
+        List<Address> addresses = List.of(
+                new Address("Moscow", "Lubyanka", 4, 321),
+                new Address("Moscow", "Soltikova", 5, 13),
+                new Address("Moscow", "Marksa", 15, 9),
+                new Address("Moscow", "Lubyanka", 4, 321),
+                new Address("Moscow", "Soltikova", 5, 13)
+        );
+        List<Profile> profileList = new ArrayList<>();
+        for (Address address : addresses) {
+            profileList.add(new Profile(address));
+        }
+        Profiles prof = new Profiles();
+        List<Address> result = prof.collectSort(profileList);
+        List<Address> expected = List.of(
+                new Address("Moscow", "Lubyanka", 4, 321),
+                new Address("Moscow", "Marksa", 15, 9),
+                new Address("Moscow", "Soltikova", 5, 13)
+        );
+
         assertThat(result, is(expected));
     }
 }

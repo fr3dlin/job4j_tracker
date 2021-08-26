@@ -1,8 +1,5 @@
 package ru.job4j.streamapi;
 
-import java.util.List;
-import java.util.stream.Stream;
-
 public class Profile {
     private Address address;
 
