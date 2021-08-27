@@ -11,10 +11,10 @@ public class MatrixTest {
 
     @Test
     public void matrixToListTest() {
-        List<List<Integer>> matrix = List.of(
-                List.of(1, 2),
-                List.of(5, 6)
-        );
+        Integer[][] matrix = {
+                {1, 2},
+                {5, 6}
+        };
         List<Integer> result = Matrix.matrixToList(matrix);
         List<Integer> expected = List.of(1, 2, 5, 6);
         assertThat(result, is(expected));
