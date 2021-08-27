@@ -28,17 +28,13 @@ public class ProfilesTest {
 
     @Test
     public void whenProfilesDistinct() {
-        List<Address> addresses = List.of(
-                new Address("Moscow", "Lubyanka", 4, 321),
-                new Address("Moscow", "Soltikova", 5, 13),
-                new Address("Moscow", "Marksa", 15, 9),
-                new Address("Moscow", "Lubyanka", 4, 321),
-                new Address("Moscow", "Soltikova", 5, 13)
+        List<Profile> profileList = List.of(
+                new Profile(new Address("Moscow", "Lubyanka", 4, 321)),
+                new Profile(new Address("Moscow", "Soltikova", 5, 13)),
+                new Profile(new Address("Moscow", "Marksa", 15, 9)),
+                new Profile(new Address("Moscow", "Lubyanka", 4, 321)),
+                new Profile(new Address("Moscow", "Soltikova", 5, 13))
         );
-        List<Profile> profileList = new ArrayList<>();
-        for (Address address : addresses) {
-            profileList.add(new Profile(address));
-        }
         Profiles prof = new Profiles();
         List<Address> result = prof.collectSort(profileList);
         List<Address> expected = List.of(
